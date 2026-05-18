@@ -1,6 +1,6 @@
 {
-  "name": "degoogaddons",
+  "name": "degoog-addons",
   "version": "1.0.0",
-  "description": "",
+  "description": "Base repository structure for Degoog addons.",
   "private": true
 }
