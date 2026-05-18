@@ -1,6 +1,18 @@
 {
   "name": "ogservers-degoog-repo",
-  "description": "OGServers Degoog extensions — plugins, themes, engines, and transports.",
-  "version": "1.0.0",
-  "license": "MIT"
+  "description": "OGServers extensions for Degoog — server monitoring and more.",
+  "author": "OGServers",
+  "plugins": [
+    {
+      "path": "plugins/server-uptime",
+      "name": "Server Uptime",
+      "description": "Adds a Server Details button next to the settings icon showing uptime %, last downtime, outage history, and server info. Includes an optional sidebar card.",
+      "version": "1.0.0",
+      "type": "slot"
+    }
+  ],
+  "themes": [],
+  "engines": [],
+  "transports": [],
+  "repo-image": "logo.png"
 }
