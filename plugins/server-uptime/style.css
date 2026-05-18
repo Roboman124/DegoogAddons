@@ -1,0 +1,264 @@
+/* server-uptime/style.css  v6.0 */
+
+/* ════════════════════════════════════════
+   SETTINGS-GEAR-ADJACENT BUTTON
+   Injected immediately before the gear icon
+   in the top-right header area.
+   ════════════════════════════════════════ */
+
+#su-gear-btn,
+.su-gear-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  margin-right: 10px;
+  vertical-align: middle;
+
+  background: var(--bg-hover, rgba(255,255,255,0.07));
+  border: 1px solid var(--border, rgba(255,255,255,0.14));
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary, #e8e8ec);
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1;
+
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+#su-gear-btn:hover,
+.su-gear-btn:hover {
+  background: var(--primary-muted, rgba(99,102,241,0.18));
+  border-color: var(--primary, #6366f1);
+  color: var(--primary, #6366f1);
+}
+
+/* ════════════════════════════════════════
+   SIDEBAR WIDGET
+   ════════════════════════════════════════ */
+
+.su-sidebar {
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+.su-sidebar-header { margin-bottom: 8px; }
+
+.su-server-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.su-server-location {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.su-bar-wrap,
+.su-modal-bar-wrap {
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.su-bar,
+.su-modal-bar {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.6s ease;
+  min-width: 2px;
+}
+
+.su-rows { display: flex; flex-direction: column; gap: 5px; }
+
+.su-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.su-label { color: var(--text-secondary); white-space: nowrap; flex-shrink: 0; }
+.su-value,
+.su-pct   { color: var(--text-primary); text-align: right; font-variant-numeric: tabular-nums; }
+.su-pct   { font-weight: 700; font-size: 13px; }
+.su-value.su-live { color: var(--primary); font-weight: 500; }
+.su-success { color: var(--success) !important; }
+.su-danger  { color: var(--danger)  !important; }
+
+.su-details {
+  margin-top: 10px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 8px;
+}
+
+.su-details-toggle { font-size: 12px; color: var(--text-secondary); width: 100%; }
+
+.su-outage-list { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+
+.su-outage-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.su-outage-row:last-child { border-bottom: none; }
+.su-outage-date { color: var(--text-secondary); }
+.su-outage-dur  { color: var(--danger); font-weight: 500; font-variant-numeric: tabular-nums; }
+.su-outage-none { font-size: 12px; color: var(--text-secondary); padding: 4px 0; }
+
+/* ════════════════════════════════════════
+   MODAL OVERLAY
+   ════════════════════════════════════════ */
+
+.su-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.su-overlay.su-overlay--open { opacity: 1; }
+
+.su-modal-loading,
+.su-modal-error {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 40px;
+  text-align: center;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.su-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: su-spin 0.7s linear infinite;
+}
+@keyframes su-spin { to { transform: rotate(360deg); } }
+
+.su-modal-inner {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 28px 24px;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: su-pop 0.2s ease;
+}
+
+@keyframes su-pop {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+.su-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.su-modal-close:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+.su-modal-brand { margin-bottom: 18px; padding-right: 36px; }
+
+.su-modal-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.su-modal-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.su-modal-flag { font-size: 18px; line-height: 1; }
+
+.su-modal-pct-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.su-modal-dot { font-size: 18px; }
+.su-modal-pct {
+  font-size: 36px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.su-modal-pct-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  align-self: flex-end;
+  padding-bottom: 4px;
+}
+
+.su-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+  margin: 18px 0 16px;
+}
+
+.su-modal-stat-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.su-modal-stat-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+  word-break: break-word;
+}
+.su-modal-stat-value.su-live { color: var(--primary); }

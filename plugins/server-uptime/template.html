@@ -1,0 +1,51 @@
+<!-- server-uptime/template.html — reference layout for the modal -->
+<div class="su-modal-inner" role="dialog" aria-modal="true" aria-label="Server Details">
+  <button class="su-modal-close" id="su-close-btn" aria-label="Close">✕</button>
+  <div class="su-modal-brand">
+    <div class="su-modal-name">{{serverName}}</div>
+    <div class="su-modal-location">
+      <span class="su-modal-flag">{{countryFlag}}</span>
+      <span>{{location}}</span>
+    </div>
+  </div>
+  <div class="su-modal-pct-row">
+    <span class="su-modal-dot">{{statusDot}}</span>
+    <span class="su-modal-pct">{{uptimePct}}%</span>
+    <span class="su-modal-pct-label">uptime</span>
+  </div>
+  <div class="su-modal-bar-wrap">
+    <div class="su-modal-bar" style="width:{{uptimePct}}%"></div>
+  </div>
+  <div class="su-modal-grid">
+    <div class="su-modal-stat">
+      <div class="su-modal-stat-label">up since</div>
+      <div class="su-modal-stat-value">{{bootTime}}</div>
+    </div>
+    <div class="su-modal-stat">
+      <div class="su-modal-stat-label">current uptime</div>
+      <div class="su-modal-stat-value su-live" data-boot="{{bootTimeMs}}">{{currentUptime}}</div>
+    </div>
+    <div class="su-modal-stat">
+      <div class="su-modal-stat-label">last went down</div>
+      <div class="su-modal-stat-value">{{lastDown}}</div>
+    </div>
+    <div class="su-modal-stat">
+      <div class="su-modal-stat-label">outage lasted</div>
+      <div class="su-modal-stat-value su-danger">{{lastOutageDuration}}</div>
+    </div>
+    <div class="su-modal-stat">
+      <div class="su-modal-stat-label">total outages</div>
+      <div class="su-modal-stat-value">{{totalOutages}}</div>
+    </div>
+    <div class="su-modal-stat">
+      <div class="su-modal-stat-label">tracking since</div>
+      <div class="su-modal-stat-value">{{firstSeen}}</div>
+    </div>
+  </div>
+  <details class="su-details degoog-accordion">
+    <summary class="degoog-accordion-toggle su-details-toggle">
+      recent outages ({{outageCount}})
+    </summary>
+    <div class="degoog-accordion-body su-outage-list">{{recentOutages}}</div>
+  </details>
+</div>

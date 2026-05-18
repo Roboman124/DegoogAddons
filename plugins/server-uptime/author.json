@@ -1,0 +1,9 @@
+{
+  "name": "server-uptime",
+  "displayName": "Server Uptime",
+  "description": "Adds a Server Details button next to the settings icon. Shows uptime %, last downtime, and outage history. Optional sidebar card. Clear history from Settings only.",
+  "version": "1.0.0",
+  "type": "slot",
+  "tags": ["uptime", "monitoring", "server", "sidebar"],
+  "license": "MIT"
+}
