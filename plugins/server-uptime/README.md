@@ -4,7 +4,7 @@ A Degoog plugin that adds a **Server Details** button next to the settings gear 
 
 ## Install
 
-Copy `server-uptime/` into `data/plugins/` and restart Degoog.
+Copy `server-uptime/` into `data/plugins/` and restart Degoog. Or Install from store using repo link.
 
 ## What you get
 
