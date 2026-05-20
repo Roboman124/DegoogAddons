@@ -1,0 +1,15 @@
+{
+  "name": "users-online",
+  "displayName": "Users Online",
+  "description": "Shows a live anonymous visitor count next to the settings icon. Users can hide themselves from the counter. Includes an optional sidebar card and !users bang command.",
+  "version": "1.0.0",
+  "type": "slot",
+  "tags": [
+    "users",
+    "online",
+    "visitors",
+    "realtime",
+    "sidebar"
+  ],
+  "license": "MIT"
+}

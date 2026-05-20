@@ -1,0 +1,34 @@
+<!-- users-online/template.html — reference layout for the modal -->
+<div class="uo-modal-inner" role="dialog" aria-modal="true" aria-label="Users Online">
+  <button class="uo-modal-close" id="uo-close-btn" aria-label="Close">✕</button>
+
+  <div class="uo-modal-header">
+    <span class="uo-modal-icon">👥</span>
+    <div>
+      <div class="uo-modal-title">Users Online</div>
+      <div class="uo-modal-sub">People browsing this server right now</div>
+    </div>
+  </div>
+
+  <div class="uo-modal-count-row">
+    <span class="uo-modal-count" id="uo-modal-count">{{count}}</span>
+    <span class="uo-modal-count-label">visible users</span>
+  </div>
+
+  <div class="uo-modal-note">
+    Counts anyone who loaded a page in the last {{inactiveMinutes}} minutes.
+  </div>
+
+  <div class="uo-hide-section">
+    <div class="uo-hide-header">Your presence</div>
+    <label class="uo-hide-toggle-row">
+      <span class="uo-hide-label">
+        <span class="uo-hide-label-title">Hide me from the counter</span>
+        <span class="uo-hide-label-desc">You'll still see the count, but others won't see you.</span>
+      </span>
+      <button class="uo-toggle-btn" id="uo-hide-toggle" role="switch" aria-checked="false">
+        <span class="uo-toggle-knob"></span>
+      </button>
+    </label>
+  </div>
+</div>

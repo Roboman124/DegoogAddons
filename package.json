@@ -9,6 +9,13 @@
       "description": "Adds a Server Details button next to the settings icon showing uptime %, last downtime, outage history, and server info. Includes an optional sidebar card.",
       "version": "1.0.0",
       "type": "slot"
+    },
+    {
+      "path": "plugins/users-online",
+      "name": "Users Online",
+      "description": "Shows a live anonymous visitor count on the header button and optional sidebar card. Users can hide themselves from the count. Configurable inactivity timeout.",
+      "version": "1.0.0",
+      "type": "slot"
     }
   ],
   "themes": [],
